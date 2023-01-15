@@ -1,0 +1,61 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>决策树</th>
+            <th>随机森林</th>
+            <th>Catboost</th>
+        </tr>
+        {% for msg in msgs %}
+        <tr>
+            <td>{{ msg[0] }}</td>
+            <td>{{ msg[1] }}</td>
+            <td>{{ msg[2] }}</td>
+            <td>{{ msg[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <img src="data:image/png;base64, {{ plot_url }}">
+    <style>
+        table{
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        table caption{
+            font-size: 2em;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+
+        th,td{
+            border: 1px solid #999;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table thead tr{
+            background-color: #008c8c;
+            color: #fff;
+        }
+
+        table tbody tr:nth-child(odd){
+            background-color: #eee;
+        }
+
+        table tbody tr:hover{
+            background-color: #ccc;
+        }
+
+        table tfoot tr td{
+            text-align: right;
+            padding-right: 20px;
+        }
+        table tbody tr td:first-child{
+            color: #f40;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}

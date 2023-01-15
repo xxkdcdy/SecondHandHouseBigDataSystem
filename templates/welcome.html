@@ -1,0 +1,58 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+<div class="container">
+            <div class="card">
+                <div class="welcome-title text-center">
+                        <h2>镇江市二手房大数据平台</h2>
+                    <p>author：xxkdcdy</p>
+                    <p>数据来源：<a href="https://zj.58.com/ershoufang/">镇江58同城</a></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="welcome-title text-center">
+                    <h2>平台信息</h2>
+                    <p>①支持自动爬取镇江市在售二手房各项数据</p>
+                    <p>②支持分页查看SQLite数据库中存储的数据</p>
+                    <p>③可视化查看在售二手房的数据和价格分布</p>
+                    <p>④预测房屋单价，查看随机森林特征重要性</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="welcome-title text-center">
+                    <h2>组件信息</h2>
+                    <p>开发平台：
+                        <a href="https://docs.python.org/release/3.9.12/whatsnew/changelog.html">Python 3.9.12</a>;
+                        <a href="https://www.jetbrains.com/pycharm/download/other.html">Pycharm 2022.1.2</a>
+                    </p>
+                    <p>存储工具：
+                            <a href="https://www.sqlite.org/index.html">sqlite3;</a>
+                        <a href="https://pypi.org/project/selenium/3.141.0/">selenium;</a>
+                        <a href="https://pypi.org/project/beautifulsoup4/4.11.1/">BeautifulSoup</a>
+                    </p>
+                    <p>分析工具：
+                        <a href="https://pypi.org/project/scikit-learn/1.1.3/">sklearn;</a>
+                        <a href="https://pypi.org/project/catboost/1.0.6/">catboost;</a>
+                        <a href="https://pypi.org/project/pandas/1.4.2/">pandas;</a>
+                        <a href="https://pypi.org/project/numpy/1.22.3/">numpy</a>
+                    </p>
+                    <p>可视化工具：
+                        <a href="https://pypi.org/project/Flask/2.1.3/">flask;</a>
+                        <a href="https://pypi.org/project/Flask-Admin/1.6.0/">flask_admin;</a>
+                        <a href="https://pypi.org/project/matplotlib/3.6.2/">matplotlib;</a>
+                        <a href="https://pypi.org/project/seaborn/0.12.1/">seaborn</a>
+                    </p>
+                </div>
+            </div>
+    </div>
+    <style type="text/css">
+            .card{
+                margin: 20px auto;
+                padding: 20px;
+                width: 90%;
+                box-shadow: 0 4px 8px 0 #aaa;
+                font-size: 20px;
+                text-align: center;
+                background-color: #fff;
+            }
+        </style>
+{% endblock %}

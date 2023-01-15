@@ -1,0 +1,73 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+    <table border="1">
+        <tr>
+            <th>标题</th>
+            <th>总价</th>
+            <th>均价</th>
+            <th>城区</th>
+            <th>区域</th>
+            <th>小区名称</th>
+            <th>小区均价</th>
+            <th>物业费用</th>
+            <th>容积率</th>
+            <th>绿化率</th>
+        </tr>
+        {% for msg in msgs %}
+        <tr>
+            <td><a href="{{ msg[2] }}">{{ msg[1] }}</a></td>
+            <td>{{ msg[3] }}</td>
+            <td>{{ msg[4] }}</td>
+            <td>{{ msg[5] }}</td>
+            <td>{{ msg[6] }}</td>
+            <td>{{ msg[7] }}</td>
+            <td>{{ msg[8] }}</td>
+            <td>{{ msg[9] }}</td>
+            <td>{{ msg[10] }}</td>
+            <td>{{ msg[11] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    第{{ page }}页，共{{ max_page }}页
+    <span style="float: right;">
+        <a href="/data/?page={{ page|int - 1 }}">上一页</a>
+        <a href="/data/?page={{ page|int + 1 }}">下一页</a>
+    </span>
+
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table caption{
+            font-size: 2em;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+
+        th,td{
+            border: 1px solid #999;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table thead tr{
+            background-color: #008c8c;
+            color: #fff;
+        }
+
+        table tbody tr:nth-child(odd){
+            background-color: #eee;
+        }
+
+        table tbody tr:hover{
+            background-color: #ccc;
+        }
+
+        table tfoot tr td{
+            text-align: right;
+            padding-right: 20px;
+        }
+    </style>
+{% endblock %}
